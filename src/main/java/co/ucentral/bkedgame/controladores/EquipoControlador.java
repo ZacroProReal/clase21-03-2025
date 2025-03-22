@@ -22,9 +22,13 @@ public class EquipoControlador {
     public Equipo crear(@RequestBody Equipo equipo){
         return equipoServicio.crear(equipo);
     }
-    @GetMapping("/{nombre}")
+    @GetMapping("/nombre/{nombre}")
     public Equipo obtenerXNombre(@PathVariable String nombre){
         return equipoServicio.obtenerXNombre(nombre);
+    }
+    @GetMapping("/pk/{id}")
+    public Equipo obtenerXPK(@PathVariable Long id){
+        return equipoServicio.obtenerXPK(id);
     }
 
 }
